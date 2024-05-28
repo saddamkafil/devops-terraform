@@ -3,7 +3,6 @@ locals {
   #aws_profile = local.account_vars.locals.aws_profile_name
   aws_bucket = local.account_vars.locals.aws_s3_bucket_name
   #aws_dynamo = local.account_vars.locals.aws_dynamo_table
- #aws_role_arn = local.account_var.local.role_arn
 }
 
 terraform {
@@ -19,7 +18,6 @@ terraform {
     ]
     env_vars = {
       #AWS_PROFILE = "${local.aws_profile}"
-     #AWS_ROLE_ARN = "{local.role_arn}"
     }
   }
 }
@@ -38,7 +36,6 @@ remote_state {
     encrypt        = true
     #dynamodb_table = "${local.aws_dynamo}"
     #profile = "${local.aws_profile}"
-    #role_arn = "${local.aws_role_arn}"
   }
 }
 
