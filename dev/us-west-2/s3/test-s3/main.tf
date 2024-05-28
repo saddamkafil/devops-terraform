@@ -1,6 +1,6 @@
 module "s3" {
     source = "../../../../../modules/s3"
-    bucket_name = "saddam-modules-test-s3-bucket-dev"
+    bucket_name = "saddam-modules-test-s3-bucket-dev-1"
     tag_name = "test"
     environment_tag = "env-test"
     versioning_status = "Disabled"
