@@ -36,7 +36,7 @@ remote_state {
     #key = "${find_in_parent_folders()}/terraform.tfstate"
     region         = "us-west-2"
     encrypt        = true
-    dynamodb_table = "${local.aws_dynamo}"
+    #dynamodb_table = "${local.aws_dynamo}"
     #profile = "${local.aws_profile}"
     #role_arn = "${local.role_arn}"
   }
