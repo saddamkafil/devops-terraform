@@ -2,8 +2,8 @@ locals {
   account_vars = read_terragrunt_config(find_in_parent_folders("account.hcl"))
   #aws_profile = local.account_vars.locals.aws_profile_name
   aws_bucket = local.account_vars.locals.aws_s3_bucket_name
-  aws_dynamo = local.account_vars.locals.aws_dynamo_tablei
-  role_arn = local.account_var.local.role_arn
+  #aws_dynamo = local.account_vars.locals.aws_dynamo_tablei
+  #role_arn = local.account_var.local.role_arn
 }
 
 terraform {
@@ -18,8 +18,8 @@ terraform {
       "untaint"
     ]
     env_vars = {
-      AWS_PROFILE = "${local.aws_profile}"
-      ROLE_ARN = "{local.role_arn}"
+      #AWS_PROFILE = "${local.aws_profile}"
+      #ROLE_ARN = "{local.role_arn}"
     }
   }
 }
@@ -36,9 +36,9 @@ remote_state {
     #key = "${find_in_parent_folders()}/terraform.tfstate"
     region         = "us-west-2"
     encrypt        = true
-    dynamodb_table = "${local.aws_dynamo}"
-    profile = "${local.aws_profile}"
-    role_arn = "${local.role_arn}"
+    #dynamodb_table = "${local.aws_dynamo}"
+    #profile = "${local.aws_profile}"
+    #role_arn = "${local.role_arn}"
   }
 }
 
